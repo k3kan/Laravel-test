@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $authors = DB::table('authors')->paginate(15);
         $books = DB::table('books')->paginate(15);
@@ -71,7 +71,7 @@ class AuthorController extends Controller
         $author = DB::table('authors')->where('id', $id)
             ->update(['name' => $request->input('name'),
             'dateOfBirth' => $request->input('dateOfBirth'),
-            'dateOfDeath' => $request->input('dateOfDeath')]);;
+            'dateOfDeath' => $request->input('dateOfDeath')]);
         return redirect('authors');
     }
 
