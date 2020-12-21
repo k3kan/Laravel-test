@@ -7,3 +7,11 @@
     @endforeach
     <br>
 @endforeach
+
+{{$books->links()}}
+
+<style>
+    .w-5{
+        display: none;
+    }
+</style>
